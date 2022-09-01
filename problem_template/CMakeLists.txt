@@ -11,9 +11,9 @@ set(CXX_STANDARD 17)
 
 foreach(PROBLEM ${PROBLEMS})
     get_filename_component(PROBLEM_NAME ${PROBLEM} NAME_WE)
-    add_executable(${PROBLEM_NAME} ${PROBLEM})
+    add_executable(${PROBLEM_NAME}.exe ${PROBLEM})
     target_link_libraries(
-        ${PROBLEM_NAME}
+        ${PROBLEM_NAME}.exe
         gtest
         ${CMAKE_THREAD_LIBS_INIT}
     )

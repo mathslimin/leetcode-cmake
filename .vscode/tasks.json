@@ -4,13 +4,7 @@
         {
             "type": "shell",
             "label": "CMake build active direactory",
-            "command": "/usr/bin/cmake",
-            "args": [
-                "${fileDirname}"
-            ],
-            "options": {
-                "cwd": "${fileDirname}"
-            },
+            "command": "cmake -DCMAKE_TOOLCHAIN_FILE=../cmake/toolchain.cmake -S . -B ./build",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -19,10 +13,7 @@
         {
             "type": "shell",
             "label": "Leetcode: Build active direactory",
-            "command": "/usr/bin/make",
-            "options": {
-                "cwd": "${fileDirname}"
-            },
+            "command": "cd build && make ${fileBasenameNoExtension}.exe",
             "group": {
                 "kind": "build",
                 "isDefault": true

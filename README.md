@@ -9,7 +9,7 @@
 - GCC/Clang and make
 
 Run `sudo apt install build-essential cmake libgtest-dev` to install in Ubuntu> 20.04
-
+```bash
 cd ~
 git clone https://github.com/google/googletest.git
 cd googletest
@@ -18,7 +18,7 @@ cmake .. -DBUILD_SHARED_LIBS=ON -DINSTALL_GTEST=ON -DCMAKE_INSTALL_PREFIX:PATH=/
 make -j8
 sudo make install
 sudo ldconfig
-
+```
 ## Usage
 
 Run `./new.sh <problem name>` to create a new problem directory in `problems`.

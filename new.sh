@@ -1,10 +1,10 @@
-if [ -z "$1" ]
+if [ -z "$1" ] || [ -z "$2" ]
 then
-	echo 'ERROR: need paramter `./new.sh <problem name>`'
+	echo 'ERROR: need paramter `./new.sh  <tag name> <problem name>`'
 	exit 1 
 fi
 DIRNAME=$(dirname $0)
-path="$DIRNAME/problems/$1"
+path="$DIRNAME/problems/$1/$2"
 echo $path
 if [ -d $path ]
 then
@@ -12,7 +12,7 @@ then
 	exit 1
 fi
 cp -r "$DIRNAME/problem_template" $path
-mv "$path/TTT.cpp" "$path/$1.cpp"
-sed -i "s/TTT/$1/g" "$path/$1.cpp"
-sed -i "s/TTT/$1/g" "$path/CMakeLists.txt"
+mv "$path/TTT.c" "$path/$2.c"
+sed -i "s/TTT/$2/g" "$path/$2.c"
+sed -i "s/TTT/$2/g" "$path/CMakeLists.txt"
 
